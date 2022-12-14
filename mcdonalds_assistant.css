@@ -1,0 +1,75 @@
+a {
+  color: #bd0017;
+}
+
+.bpw-from-user .bpw-chat-bubble .bpw-chat-bubble-content {
+  background-color: #ffc836;
+  color: #333;
+  border-radius: 12px;
+  border-bottom-right-radius: 2px;
+}
+
+.bpw-from-bot .bpw-chat-bubble .bpw-chat-bubble-content {
+  background-color: inherit;
+  color: #333;
+  border-radius: 12px;
+  border-bottom-left-radius: 2px;
+}
+
+.bpw-chat-bubble:first-of-type {
+  border-radius: 12px;
+}
+
+.bpw-chat-bubble:last-of-type {
+  border-radius: 12px;
+}
+
+.bpw-bubble-text {
+  background-color: #f1efef;
+}
+
+.bpw-card-container {
+  border: none;
+}
+
+.bpw-card-header {
+  padding: 0px;
+}
+
+.bpw-card-external-icon {
+  background: none;
+}
+
+.bpw-card-action:hover {
+  text-decoration: none;
+  color: #bd0017;
+}
+
+.bpw-bubble-carousel {
+  background-color: #fff;
+}
+
+.bpw-bubble-session_reset {
+  display: none;
+}
+
+.bpw-button {
+  border: 1px solid #bd0017;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  color: #bd0017;
+}
+
+.bpw-button:hover {
+  background-color: #bd0017;
+  color: #fff;
+}
+
+.bpw-send-buttons {
+  display: none;
+}
+
+#btn-download {
+  display: none;
+}
+
