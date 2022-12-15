@@ -2,6 +2,7 @@ a {
   color: #bd0017;
 }
 
+/* default user messages background and font color */
 .bpw-from-user .bpw-chat-bubble .bpw-chat-bubble-content {
   background-color: #ffc836;
   color: #333;
@@ -9,67 +10,92 @@ a {
   border-bottom-right-radius: 2px;
 }
 
+/* default bot messages background and font color */
 .bpw-from-bot .bpw-chat-bubble .bpw-chat-bubble-content {
   background-color: inherit;
   color: #333;
   border-radius: 12px;
   border-bottom-left-radius: 2px;
 }
-
-.bpw-chat-bubble:first-of-type {
-  border-radius: 12px;
-}
-
-.bpw-chat-bubble:last-of-type {
-  border-radius: 12px;
-}
-
 .bpw-bubble-text {
   background-color: #f1efef;
 }
 
+/* rewrite default message bubble styles */
+.bpw-chat-bubble:first-of-type {
+  border-radius: 12px;
+}
+.bpw-chat-bubble:last-of-type {
+  border-radius: 12px;
+}
+
+/* customize card content type */
 .bpw-card-container {
   border: none;
 }
-
 .bpw-card-header {
   padding: 0px;
 }
-
 .bpw-card-external-icon {
   background: none;
 }
-
 .bpw-card-action:hover {
   text-decoration: none;
   color: #bd0017;
 }
 
-.bpw-bubble-carousel {
+/* give white background color to content types and quick reply area */
+.bpw-bubble-carousel, .bpw-keyboard-quick_reply {
   background-color: #fff;
 }
 
+/* remove 'reset' message from our view */
 .bpw-bubble-session_reset {
   display: none;
 }
 
+/* customize buttons*/
 .bpw-button {
   border: 1px solid #bd0017;
   border-radius: 20px;
   font-size: 0.875rem;
   color: #bd0017;
 }
-
 .bpw-button:hover {
   background-color: #bd0017;
   color: #fff;
 }
 
+/* remove redundant elements from composer and modify styles */
 .bpw-send-buttons {
   display: none;
 }
-
 #btn-download {
   display: none;
+}
+.bpw-composer textarea {
+  overflow: hidden;
+  font-size: 0.875rem;
+}
+
+/*  change header font color */
+.bpw-header-name {
+  color: #26344a;
+}
+
+/* typing animation  */
+.bpw-typing-group {
+  height: 20px;
+}
+
+.bpw-typing-bubble {
+  height: 28px;
+  width: 28px;
+  background: url(/assets/modules/channel-web/images/friesboxloader-cropped.gif) no-repeat;
+  display: inline-block;
+  background-size: 100% 100%;
+  border-radius: 0%;
+  margin: 0px;
+  padding: 0px;
 }
 

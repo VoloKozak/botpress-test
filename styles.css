@@ -64,5 +64,9 @@
 }
 
 .hidden {
-  display: none;
+  display: none !important;
+}
+
+.screenshot {
+  display: block;
 }

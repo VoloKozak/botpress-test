@@ -1,14 +1,18 @@
 const toggleBtn = document.querySelector('.btw-button-widget');
 const form = document.querySelector('form');
+const instructions = document.querySelector('.instructions');
 
 form.addEventListener('submit', e => {
   e.preventDefault();
   const input = e.target.elements[0];
-  if (input.value) {
+  if (input.value && isURL(input.value)) {
     initBot(input.value);
     form.reset();
-    form.classList.add('hidden');
+    instructions.classList.add('hidden');
     toggleBtn.classList.remove('hidden');
+  } else {
+    console.log('invalid')
+    alert('Please enter valid host URL!')
   }
 })
 
@@ -64,6 +68,25 @@ function initBot(host) {
   toggleBtn.addEventListener("click", function () {
     window.botpressWebChat.sendEvent({ type: "show" })
   })
+}
+
+document.addEventListener('click', (e) => {
+  const el = e.target
+  if (el.tagName === 'BUTTON' && el.hasAttribute('data-step')) {
+    const stepImg = el.getAttribute('data-step')
+    const image = document.querySelector(`.${stepImg}`);
+    if (image.classList.contains('hidden')) {
+      image.classList.remove('hidden')
+    } else {
+      image.classList.add('hidden')
+    }
+  }
+})
+
+export default function isURL(str) {
+  const urlRegex = '^(?!mailto:)(?:(?:http|https|ftp)://)(?:\\S+(?::\\S*)?@)?(?:(?:(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[0-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)(?:\\.(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)*(?:\\.(?:[a-z\\u00a1-\\uffff]{2,})))|localhost)(?::\\d{2,5})?(?:(/|\\?|#)[^\\s]*)?$';
+  const url = new RegExp(urlRegex, 'i');
+  return str.length < 2083 && url.test(str);
 }
 
 
