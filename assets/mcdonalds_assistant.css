@@ -87,7 +87,6 @@ a {
 .bpw-typing-group {
   height: 20px;
 }
-
 .bpw-typing-bubble {
   height: 28px;
   width: 28px;
@@ -97,5 +96,23 @@ a {
   border-radius: 0%;
   margin: 0px;
   padding: 0px;
+} 
+
+/* change height of webchat  */
+.bpw-layout {
+  height: 80% !important;
+}
+
+/* remove icon from header  */
+.bpw-header-title-container .bpw-bot-avatar {
+  display: none;
+}
+
+/* modify date info  */
+.bpw-date-container {
+  margin: 10px 0 10px;
+}
+.bpw-date-container .bpw-small-line {
+  display: none;
 }
 
