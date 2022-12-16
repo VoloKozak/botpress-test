@@ -18,16 +18,24 @@ form.addEventListener('submit', e => {
 
 
 function initBot(host) {
+
+  const script = document.createElement('script');
+  script.setAttribute( 'src', `${host}/assets/modules/channel-web/inject.js` );
+  document.head.appendChild(script);
+
   const config = { 
     host, 
     botId: 'mcdonalds_assistant',
     hideWidget: true,
-    extraStylesheet: '/assets/modules/channel-web/mcdonalds_assistant.css'
+    showPoweredBy: false,
+    botName: "McDonald's Virtual Assistant",
+    extraStylesheet: '/assets/modules/channel-web/mcdonalds_assistant.css',
   }
   
-  window.botpressWebChat.init(config);
+  setTimeout(() => {
+    window.botpressWebChat.init(config);
   
-  window.addEventListener('message', function(event) {
+    window.addEventListener('message', function(event) {
     //Identifies when the bot bubble is clicked and the sends 'proactive-trigger' event
     if (event.data.name === 'webchatOpened' || (event.data.payload?.type === 'session_reset')) {
         window.botpressWebChat.sendEvent({
@@ -68,7 +76,10 @@ function initBot(host) {
   toggleBtn.addEventListener("click", function () {
     window.botpressWebChat.sendEvent({ type: "show" })
   })
+  }, 500)
 }
+
+
 
 document.addEventListener('click', (e) => {
   const el = e.target
@@ -81,7 +92,9 @@ document.addEventListener('click', (e) => {
       image.classList.add('hidden')
     }
   }
-})
+}
+
+)
 
 export default function isURL(str) {
   const urlRegex = '^(?!mailto:)(?:(?:http|https|ftp)://)(?:\\S+(?::\\S*)?@)?(?:(?:(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[0-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)(?:\\.(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)*(?:\\.(?:[a-z\\u00a1-\\uffff]{2,})))|localhost)(?::\\d{2,5})?(?:(/|\\?|#)[^\\s]*)?$';

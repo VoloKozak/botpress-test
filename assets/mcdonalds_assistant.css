@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'Speedee';
+  src:  url(/assets/modules/channel-web/fonts/Speedee_Rg.ttf);
+}
+
+body {
+  font-family: Speedee, sans-serif;
+}
+
 a {
   color: #bd0017;
 }
@@ -60,6 +69,7 @@ a {
   border-radius: 20px;
   font-size: 0.875rem;
   color: #bd0017;
+  font-family: Speedee;
 }
 .bpw-button:hover {
   background-color: #bd0017;
@@ -85,23 +95,16 @@ a {
 
 /* typing animation  */
 .bpw-typing-group {
-  height: 20px;
+  height: 36px;
+  width: 40px;
+  background: url(/assets/modules/channel-web/images/friesboxloader-cropped.gif) no-repeat;
+  padding: 0;
+  margin: 0;
+  background-size: 100% 100%;
 }
 .bpw-typing-bubble {
-  height: 28px;
-  width: 28px;
-  background: url(/assets/modules/channel-web/images/friesboxloader-cropped.gif) no-repeat;
-  display: inline-block;
-  background-size: 100% 100%;
-  border-radius: 0%;
-  margin: 0px;
-  padding: 0px;
+  display: none;
 } 
-
-/* change height of webchat  */
-.bpw-layout {
-  height: 80% !important;
-}
 
 /* remove icon from header  */
 .bpw-header-title-container .bpw-bot-avatar {

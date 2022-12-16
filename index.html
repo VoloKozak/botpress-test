@@ -31,25 +31,28 @@
           <button data-step="step3Img">Toggle screenshot</button>
           <img class="screenshot step3Img hidden" height="200" width="350" src="./screenshots/step_3.png" />
         </li>
+        <li>
+          Click on 'Upload' button, choose your <b>Speedee_Rg.ttf</b> file and specify the following path: <b>assets/modules/channel-web/fonts/Speedee_Rg.ttf</b>
+          <button data-step="step4Img">Toggle screenshot</button>
+          <img class="screenshot step4Img hidden" height="200" width="350" src="./screenshots/step_4.png" />
+        </li>
       </ul>
     <li>Run the botpress server locally / Make sure you have a botpress server deployed</li>
     <li>Enter your host url in the input below and click 'Init bot'</li>
   </ol>
 
 <form class="form">
-  <input type="url" class="inputHost" placeholder="Botpress host URL. e.g. http://localhost:3000" required/>
+  <input type="url" class="inputHost" value="http://localhost:3000" placeholder="Botpress host URL. e.g. http://localhost:3000" required/>
   <button type="submit" class="initBtn">Init bot</button>
 </form>
 </div>
 
   <button class="btw-button-widget hidden">
     <span class="btw-button-widget__text">Talk to McDonald's Virtual Assistant</span>
-    <div class="btw-button-widget__icon-container">
-      <span class="btw-button-widget__icon"></span>
-    </div>
+    <img src="./mcdonald's_icon.jpeg" class="btw-button-widget__icon" />
   </button>
 
-  <script src="http://localhost:3000/assets/modules/channel-web/inject.js"></script>
+  <!-- <script src="http://localhost:3000/assets/modules/channel-web/inject.js"></script> -->
   <script type="module" src="./script.js"></script>
 </body>
 </html>
