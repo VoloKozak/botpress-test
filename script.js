@@ -16,7 +16,6 @@ form.addEventListener('submit', e => {
   }
 })
 
-
 function initBot(host) {
 
   const script = document.createElement('script');
@@ -36,6 +35,7 @@ function initBot(host) {
     window.botpressWebChat.init(config);
   
     window.addEventListener('message', function(event) {
+      
     //Identifies when the bot bubble is clicked and the sends 'proactive-trigger' event
     if (event.data.name === 'webchatOpened' || (event.data.payload?.type === 'session_reset')) {
         window.botpressWebChat.sendEvent({
@@ -48,7 +48,7 @@ function initBot(host) {
     }
     if (event.type === 'message' && event.data.payload?.payload === 'SURE') {
       navigator.geolocation.getCurrentPosition(onSuccessLocationRetrieve, onErrorLocationRetrieve)
-    }
+    } 
   })
   
   function onSuccessLocationRetrieve(location) {

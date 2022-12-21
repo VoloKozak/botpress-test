@@ -41,6 +41,7 @@ a {
 /* customize card content type */
 .bpw-card-container {
   border: none;
+  min-height: 50px;
 }
 .bpw-card-header {
   padding: 0px;
