@@ -24,7 +24,7 @@ function initBot(host) {
 
   const config = { 
     host, 
-    botId: 'mcdonalds_assistant',
+    botId: 'mcdonalds_assistant_dev',
     hideWidget: true,
     showPoweredBy: false,
     botName: "McDonald's Virtual Assistant",
@@ -33,11 +33,11 @@ function initBot(host) {
   
   setTimeout(() => {
     window.botpressWebChat.init(config);
-  
-    window.addEventListener('message', function(event) {
-      
+       
+    window.addEventListener('message', function(event) {      
+    console.log(event.data);
     //Identifies when the bot bubble is clicked and the sends 'proactive-trigger' event
-    if (event.data.name === 'webchatOpened' || (event.data.payload?.type === 'session_reset')) {
+    if (event.data.name === 'webchatOpened' || (event.data.payload?.type === 'session_reset')) { 
         window.botpressWebChat.sendEvent({
         type: 'proactive-trigger',
         channel: 'web',
