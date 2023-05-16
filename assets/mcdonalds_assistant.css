@@ -120,3 +120,7 @@ a {
   display: none;
 }
 
+/* hide info button */
+.bpw-header-icon-botinfo {
+  display: none !important;
+}

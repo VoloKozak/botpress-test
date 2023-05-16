@@ -2,6 +2,7 @@ const toggleBtn = document.querySelector('.btw-button-widget');
 const form = document.querySelector('form');
 const instructions = document.querySelector('.instructions');
 
+
 form.addEventListener('submit', e => {
   e.preventDefault();
   const input = e.target.elements[0];
@@ -34,8 +35,7 @@ function initBot(host) {
   setTimeout(() => {
     window.botpressWebChat.init(config);
        
-    window.addEventListener('message', function(event) {      
-    console.log(event.data);
+    window.addEventListener('message', function(event) {   
     //Identifies when the bot bubble is clicked and the sends 'proactive-trigger' event
     if (event.data.name === 'webchatOpened' || (event.data.payload?.type === 'session_reset')) { 
         window.botpressWebChat.sendEvent({
@@ -101,5 +101,11 @@ export default function isURL(str) {
   const url = new RegExp(urlRegex, 'i');
   return str.length < 2083 && url.test(str);
 }
+
+
+
+
+
+
 
 
